@@ -4,6 +4,13 @@
 package bitmap.transformer;
 
 import org.junit.jupiter.api.Test;
+
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -11,4 +18,53 @@ class AppTest {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
+
+    @Test void greyScaleWorks() throws IOException {
+        App classUnderTest = new App();
+        Bitmap test = new Bitmap("baldy-8bit.bmp", "test3", "grayScale");
+        String newFileName = "test3";
+        String path = System.getProperty("user.dir");
+        if (path.endsWith("bitmap-transformer")) {
+            newFileName = "app/src/main/resources/" + newFileName + ".bmp";
+        } else {
+            newFileName = "src/main/resources/" + newFileName + ".bmp";
+        }
+        File testFile = new File(newFileName);
+        assertTrue(testFile.exists());
+    }
+
+    @Test void convertBW() throws IOException {
+        App classUnderTest = new App();
+        Bitmap test = new Bitmap("baldy-8bit.bmp", "test4", "convertBW");
+        String newFileName = "test4";
+        String path = System.getProperty("user.dir");
+        if (path.endsWith("bitmap-transformer")) {
+            newFileName = "app/src/main/resources/" + newFileName + ".bmp";
+        } else {
+            newFileName = "src/main/resources/" + newFileName + ".bmp";
+        }
+        File testFile = new File(newFileName);
+        assertTrue(testFile.exists());
+    }
+
+    @Test void invertColors() throws IOException {
+        App classUnderTest = new App();
+        Bitmap test = new Bitmap("baldy-8bit.bmp", "test5", "convertBW");
+        String newFileName = "test5";
+        String path = System.getProperty("user.dir");
+        if (path.endsWith("bitmap-transformer")) {
+            newFileName = "app/src/main/resources/" + newFileName + ".bmp";
+        } else {
+            newFileName = "src/main/resources/" + newFileName + ".bmp";
+        }
+        File testFile = new File(newFileName);
+        assertTrue(testFile.exists());
+    }
 }
+
+
+
+
+
+
+
