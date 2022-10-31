@@ -8,4 +8,4 @@
 
 ### If running from intellij = Bitmap test = new Bitmap("baldy-8bit.bmp", "test5", "convertBW");
 
-### If running from terminal run = ./gradlew run --args 'ibaldy-8bit.bmp", "test5", "convertBW'
+### If running from terminal run = ./gradlew run --args 'baldy-8bit.bmp", "test5", "convertBW'
